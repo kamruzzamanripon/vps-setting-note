@@ -23,3 +23,21 @@ cd /var/lib/phpmyadmin
 sudo chmod -R 775 tmp
 sudo service nginx restart
 ```
+
+- new user create
+```sh
+-- Log in to MySQL as the root user
+mysql -u root -p
+
+-- Reset privileges for the user
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'newuser'@'localhost';
+FLUSH PRIVILEGES;
+
+-- Grant privileges again
+GRANT ALL PRIVILEGES ON *.* TO 'newuser'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+-- Exit MySQL
+EXIT;
+sudo service mysql restart
+```

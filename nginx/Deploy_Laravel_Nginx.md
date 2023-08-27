@@ -73,6 +73,8 @@ exit
       - Generate SSH Keys
       ```sh
       Syntax:- ssh-keygen -t ed25519 -C "your_email@example.com"
+      Or
+      ssh-keygen -f file_name -t ed25519 -C "your_email@example.com"
       ```
       - If Permission Denied then Own .ssh then try again to Generate SSH Keys
       ```sh
@@ -91,6 +93,10 @@ exit
       ```sh
       Syntax:- git clone ssh_repo_path
       Example:- git clone git@github.com:geekyshow1/miniblog.git
+
+      - Using SSH custom_file name ssh then do this
+      Syntax:- git clone ssh_repo_path
+      Example:- GIT_SSH_COMMAND="ssh -i ~/.ssh/file_name" git clone git@github.com:geekyshow1/miniblog.git
       ```
 - Move Project Folder to Web Server public directory
 ```sh

@@ -175,6 +175,8 @@ sudo find storage -type f -exec chmod 644 {} \;
 - Set storage's Folder Permission to 775
 ```sh
 sudo find storage -type d -exec chmod 775 {} \;
+Or
+sudo chmod -R 775 storage/
 ```
 - Open Mysql
 - Create Database User https://github.com/geekyshow1/GeekyShowsNotes/blob/main/AssignMySQL_DB_To_User.md

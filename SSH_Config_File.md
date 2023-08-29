@@ -8,6 +8,15 @@ cd c:\users\yourUser\.ssh
 copy config.txt config
 del config.txt
 ```
+
+##### Generate Key
+```sh
+ssh-keygen -f C:\Users\R/.ssh/my_key -t rsa -b 4096
+Or
+ssh-keygen -f C:\Users\R/.ssh/my_key -t ed25519 -C "your_email@example.com"
+```
+
+
 - Edit config using notepad or notepad++
 - Write below credentials then save it
 ```sh

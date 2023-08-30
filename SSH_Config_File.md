@@ -92,3 +92,34 @@ Host react_project
   git pull
   
 ```
+
+
+- if fact some problem. like permission deney for connect github
+- Step One
+```sh
+- Permissions
+  	chmod 600 ~/.ssh/movid_api_ed25519
+	chmod 644 ~/.ssh/movid_api_ed25519.pub
+
+- SSH Agent
+	ssh-add ~/.ssh/movid_api_ed25519
+	
+- SSH Config Reload:
+	sudo service ssh restart	
+	ssh -vT git@movie_api
+  
+```
+- Step Two, if step one not work then do this
+```sh
+- Check Ownership
+  	chown nashwan:nashwan ~/.ssh
+	chown nashwan:nashwan ~/.ssh/movid_api_ed25519
+
+- Check Parent Directory Permissions
+	chmod 700 ~/.ssh
+	
+- Use ssh-agent:
+	ssh-add ~/.ssh/movid_api_ed25519	
+	ssh -vT git@movie_api
+  
+```

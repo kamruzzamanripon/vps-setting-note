@@ -18,6 +18,8 @@ sudo apt install nginx
 - Allow Apache through Firewall
 ```sh
 sudo ufw allow "Nginx Full"
+Or
+sudo ufw allow 80,443/tcp
 ```
 - Check Server IP on Web Browser You will see Nginx Default Page
 - Install MySQL

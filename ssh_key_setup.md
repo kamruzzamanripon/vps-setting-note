@@ -28,3 +28,16 @@ Example:- ssh -P 21350 u27653@216.32.44.12 "mkdir /home/u27653/.ssh"
 Syntax:- scp -P PORT SSH_PUBLIC_KEY_PATH USERNAME@HOSTIP:/home/USERNAME/.ssh/authorized_keys
 Example:- scp -P 21350 C:\Users\R/.ssh\id_rsa.pub u27653@216.32.44.12:/home/u27653/.ssh/authorized_keys
 ```
+
+- authorized_keys: Permission denied (Problem)
+```sh
+1.chmod 711 ~/.ssh/authorized_keys
+2.sudo nano /etc/ssh/sshd_config
+    Look for the following lines:
+    PubkeyAuthentication yes
+    AuthorizedKeysFile     .ssh/authorized_keys
+
+    sudo systemctl restart sshd
+3. Check File Ownership
+    sudo chown eithan:eithan ~/.ssh/authorized_keys    
+```
